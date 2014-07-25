@@ -228,7 +228,7 @@ decByte _             = Nothing
 -- Note that these only return True for ASCII characters; this is important.
 --------------------------------------------------------------------------------
 ok_host :: Char -> Bool
-ok_host c   = isDigit c || isAlphaASCII c || c == '.' || c == '-'
+ok_host c   = isDigit c || isAlphaASCII c || c == '.' || c == '-' || c `elem` ";:@$-_.+!*'(),"
 
 ok_param :: Char -> Bool
 ok_param c  = ok_host c || c `elem` "~;:@$_!*'(),"
